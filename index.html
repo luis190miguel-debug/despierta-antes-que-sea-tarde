@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Despierta antes que sea tarde</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #1e88e5, #42a5f5, #90caf9);
+      background-attachment: fixed;
+    }
+    header {
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+    .slogan {
+      font-size: 20px;
+      margin-top: 10px;
+      font-style: italic;
+    }
+    section {
+      padding: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      flex: 1;
+      min-width: 300px;
+    }
+    .title {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .img-box {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .img-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      border: none;
+      background: #1e88e5;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-family: 'Times New Roman', serif;
+    }
+    #resultado {
+      margin-top: 20px;
+      padding: 20px;
+      background: #e3f2fd;
+      border-radius: 10px;
+      display: none;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>“Despierta antes que sea tarde”</h1>
+    <h2>ConCiencia Joven</h2>
+    <p class="slogan">“El primer paso para perderte… es probar.”</p>
+  </header>
+
+  <section>
+    <div class="flex-container">
+      <div class="card">
+        <div class="title">Público Objetivo</div>
+        <p>Nuestra campaña está dirigida a adolescentes entre <strong>14 y 17 años</strong> que viven en los distritos de los <strong>conos de Lima Metropolitana</strong>. Este grupo enfrenta riesgos constantes debido a factores sociales, presión grupal, falta de información real y la exposición a ambientes vulnerables.</p>
+        <p>Buscamos llegar a ellos porque se encuentran en una etapa decisiva donde una buena orientación puede marcar la diferencia.</p>
+        <div class="img-box">
+          <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/RCEGLTN4TREIPL2MENONBVU6E4.jpg" alt="Jóvenes en Lima">
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="title">¿Por qué elegimos el tema?</div>
+        <p>El consumo de drogas en adolescentes está aumentando en varios sectores de Lima. Muchos jóvenes no conocen los verdaderos riesgos físicos, psicológicos y emocionales.</p>
+        <p>Nuestra campaña busca <strong>despertar conciencia</strong> mediante información clara y apoyo emocional.</p>
+        <div class="img-box">
+          <img src="data:image/jpeg;base64,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" alt="Prevención de drogas">
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top: 30px;">
+      <div class="title">Encuesta de orientación</div>
+      <p>Responde estas preguntas para saber si necesitas apoyo profesional o solo orientación preventiva.</p>
+
+      <form id="encuesta">
+        <div class="question">
+          <p>1. ¿Alguna vez has sentido curiosidad por probar drogas?</p>
+          <label><input type="radio" name="p1" value="2"> Sí, varias veces</label><br>
+          <label><input type="radio" name="p1" value="1"> A veces</label><br>
+          <label><input type="radio" name="p1" value="0"> No</label>
+        </div>
+
+        <div class="question">
+          <p>2. ¿Tienes amigos que consumen drogas?</p>
+          <label><input type="radio" name="p2" value="2"> Sí</label><br>
+          <label><input type="radio" name="p2" value="1"> Creo que sí</label><br>
+          <label><input type="radio" name="p2" value="0"> No</label>
+        </div>
+
+        <div class="question">
+          <p>3. ¿Te sientes presionado(a) por tu entorno?</p>
+          <label><input type="radio" name="p3" value="2"> Sí</label><br>
+          <label><input type="radio" name="p3" value="1"> A veces</label><br>
+          <label><input type="radio" name="p3" value="0"> No</label>
+        </div>
+
+        <div class="question">
+          <p>4. ¿Has probado alguna sustancia antes?</p>
+          <label><input type="radio" name="p4" value="2"> Sí</label><br>
+          <label><input type="radio" name="p4" value="1"> Una vez</label><br>
+          <label><input type="radio" name="p4" value="0"> No</label>
+        </div>
+
+        <div class="question">
+          <p>5. ¿Te sientes triste, solo o sin apoyo últimamente?</p>
+          <label><input type="radio" name="p5" value="2"> Sí</label><br>
+          <label><input type="radio" name="p5" value="1"> A veces</label><br>
+          <label><input type="radio" name="p5" value="0"> No</label>
+        </div>
+
+        <div class="question">
+          <p>6. ¿Sientes que no tienes control sobre tus decisiones?</p>
+          <label><input type="radio" name="p6" value="2"> Sí</label><br>
+          <label><input type="radio" name="p6" value="1"> A veces</label><br>
+          <label><input type="radio" name="p6" value="0"> No</label>
+        </div>
+
+        <button type="button" onclick="calcular()">Enviar respuestas</button>
+      </form>
+
+      <div id="resultado"></div>
+    </div>
+  </section>
+
+  <script>
+    function calcular() {
+      let total = 0;
+      for (let i = 1; i <= 6; i++) {
+        let r = document.querySelector(`input[name='p${i}']:checked`);
+        if (!r) { alert('Responde todas las preguntas'); return; }
+        total += parseInt(r.value);
+      }
+
+      let msg = "";
+      if (total <= 3) msg = "Estás tomando buenas decisiones. Mantente firme y aléjate de ambientes riesgosos.";
+      else if (total <= 7) msg = "Hay señales de alerta. Conversar con alguien de confianza podría ayudarte mucho.";
+      else msg = "Necesitas apoyo profesional. No estás solo(a). Buscar ayuda es valentía.";
+
+      const resultado = document.getElementById('resultado');
+      resultado.style.display = 'block';
+      resultado.textContent = msg;
+    }
+  </script>
+
+</body>
+</html>
